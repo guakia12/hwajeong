@@ -7,7 +7,11 @@ body {
 	margin: 0px;
 }
 
-div#back_images {
+img {
+	position: absolute;
+}
+
+div#moving_images_slow {
 	margin: 0px;
 	padding: 0px;
 	position: absolute;
@@ -15,10 +19,45 @@ div#back_images {
 	height: inherit;
 }
 
-img{
-	padding: 0px;
+div#moving_images_slow img {
+	transition: all 20s;
+  	-webkit-transition: all 20s;
+  	-moz-transition: all 20s;
+  	-o-transition: all 20s;
+  	-ms-transition: all 20s;
+}
+
+div#moving_images_medium {
 	margin: 0px;
-	display: inline-block;
+	padding: 0px;
+	position: absolute;
+	width: inherit;
+	height: inherit;
+}
+
+div#moving_images_medium img {
+	transition: all 10s;
+  	-webkit-transition: all 10s;
+  	-moz-transition: all 10s;
+  	-o-transition: all 10s;
+  	-ms-transition: all 10s;
+}
+
+div#moving_images_fast {
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	width: inherit;
+	height: inherit;	
+}
+
+div#moving_images_fast img {
+	z-index: 1;
+	transition: all 5s;
+  	-webkit-transition: all 5s;
+  	-moz-transition: all 5s;
+  	-o-transition: all 5s;
+  	-ms-transition: all 5s;
 }
 
 div#spread_sheet {
@@ -52,7 +91,7 @@ div#merged_cells_sheet {
 	padding: 0px;
 	position: absolute;
 	top: 20px;
-	left: 20px;
+	left: 40px;
 	width: inherit;
 	height: inherit;
 }
@@ -74,7 +113,7 @@ div.merged_cell {
  	background-position: center center;
 }
 
-div#spread_sheet {
+div#sheet_edge {
 	margin: 0px;
 	padding: 0px;
 	position: absolute;
@@ -101,6 +140,7 @@ div.x_edge_cell {
   	font-weight: bold; 
   	text-align: center;
   	padding: 2px;
+  	z-index: 1;
 }
 
 div.y_edge_cell {
@@ -120,6 +160,62 @@ div.y_edge_cell {
   	font-size: 12px;
   	font-weight: bold; 
   	padding: 2px;
+  	z-index: 1;
+}
+
+div#information1 {
+	margin: 0px;
+	padding: 0px;
+	width: 420px;
+	height: 60px;
+	position: absolute;
+	top: 400px;
+	left: 180px;
+	background-image: url('../source/pngs/information_1.png');	
+}
+
+div#information2 {
+	margin: 0px;
+	padding: 0px;
+	width: 320px;
+	height: 60px;
+	position: absolute;
+	top: 500px;
+	left: 300px;
+	background-image: url('../source/pngs/information_2.png');	
+}
+
+div#information3 {
+	margin: 0px;
+	padding: 0px;
+	width: 680px;
+	height: 60px;
+	position: absolute;
+	top: 200px;
+	left: 740px;
+	background-image: url('../source/pngs/information_3.png');	
+}
+
+div#information4 {
+	margin: 0px;
+	padding: 0px;
+	width: 300px;
+	height: 60px;
+	position: absolute;
+	top: 60px;
+	left: 600px;
+	background-image: url('../source/pngs/information_4.png');	
+}
+
+div#information5 {
+	margin: 0px;
+	padding: 0px;
+	width: 380px;
+	height: 280px;
+	position: absolute;
+	top: 60px;
+	left: 80px;
+	background-image: url('../source/pngs/information_5.png');	
 }
 
 table {
@@ -127,7 +223,7 @@ table {
 	margin: 0px;
 	position: absolute;
 	top: 60px;
-	left: 60px;
+	left: 80px;
 }
 
 td.visible {
@@ -175,7 +271,7 @@ div#introduction {
   	-webkit-box-sizing: border-box;
   	border: 1px black solid;
   	position: absolute;
-  	top: 300px;
+  	top: 500px;
   	left: 800px;
   	font-size: 12px;
 }
@@ -191,22 +287,7 @@ div#facebook_btn {
   	border: 1px black solid;
   	font-size: 12px;
   	position: absolute;
-  	top: 600px;
-  	left: 60px;
-}
-
-div#facebook_btn {
-	height: 20px;
-	width: 80px;
-	padding: 2px;
-	background-color: white;
-	box-sizing: border-box;
-  	-moz-box-sizing: border-box;
-  	-webkit-box-sizing: border-box;
-  	border: 1px black solid;
-  	font-size: 12px;
-  	position: absolute;
-  	top: 600px;
+  	top: 540px;
   	left: 60px;
 }
 
@@ -221,8 +302,8 @@ div#instagram_btn {
   	border: 1px black solid;
   	font-size: 12px;
   	position: absolute;
-  	top: 600px;
-  	left: 200px;
+  	top: 580px;
+  	left: 60px;
 }
 
 div#medium_btn {
@@ -236,8 +317,8 @@ div#medium_btn {
   	border: 1px black solid;
   	font-size: 12px;
   	position: absolute;
-  	top: 600px;
-  	left: 320px;
+  	top: 620px;
+  	left: 60px;
 }
 
 div#twitter_btn {
@@ -251,11 +332,19 @@ div#twitter_btn {
   	border: 1px black solid;
   	font-size: 12px;
   	position: absolute;
-  	top: 600px;
-  	left: 480px;
+  	top: 660px;
+  	left: 60px;
 }
 
 a{ color: blue; }
+
+.img_draggable {
+	cursor: url('http://grabanddrag.mozdev.org/grab.png'), auto;
+}
+
+.img_draggable:active {
+	cursor: url('http://grabanddrag.mozdev.org/grabbing.png'), auto;
+}
 
 .draggable {
 	box-shadow: 5px 5px 2px black;
