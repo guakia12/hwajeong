@@ -76,8 +76,8 @@ table {
 	border-collapse: collapse;
 	margin: 0px;
 	position: absolute;
-	top: 40px;
-	left: 40px;
+	top: 20px;
+	left: 20px;
 }
 
 td.visible {
@@ -94,15 +94,15 @@ td.visible:active {
 }
 
 td.invisible{
-	height: 40px;
-	width: 40px;
+	height: 20px;
+	width: 20px;
 	padding: 0px;
 	border: 0px black solid;
 }
 
 div#countdown {
-	height: 40px;
-	width: 400px;
+	height: 20px;
+	width: 200px;
 	background-color: white;
 	box-sizing: border-box;
   	-moz-box-sizing: border-box;
@@ -110,7 +110,7 @@ div#countdown {
   	border: 1px black solid;
   	position: absolute;
   	font-size: 18px;
-  	top: 240px;
+  	top: 220px;
   	left: 500px;
   	padding: 2px;
 }
@@ -131,7 +131,7 @@ div#introduction {
 }
 
 div#facebook_btn {
-	height: 40px;
+	height: 20px;
 	width: 80px;
 	padding: 2px;
 	background-color: white;
@@ -146,7 +146,7 @@ div#facebook_btn {
 }
 
 div#facebook_btn {
-	height: 40px;
+	height: 20px;
 	width: 80px;
 	padding: 2px;
 	background-color: white;
@@ -161,7 +161,7 @@ div#facebook_btn {
 }
 
 div#instagram_btn {
-	height: 40px;
+	height: 20px;
 	width: 80px;
 	padding: 2px;
 	background-color: white;
@@ -172,11 +172,11 @@ div#instagram_btn {
   	font-size: 18px;
   	position: absolute;
   	top: 600px;
-  	left: 400px;
+  	left: 200px;
 }
 
 div#medium_btn {
-	height: 40px;
+	height: 20px;
 	width: 80px;
 	padding: 2px;
 	background-color: white;
@@ -187,11 +187,11 @@ div#medium_btn {
   	font-size: 18px;
   	position: absolute;
   	top: 600px;
-  	left: 340px;
+  	left: 320px;
 }
 
 div#twitter_btn {
-	height: 40px;
+	height: 20px;
 	width: 80px;
 	padding: 2px;
 	background-color: white;
