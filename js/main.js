@@ -1,5 +1,5 @@
-var spreadSheet, mergedCellsSheet;
-var _cell, _sheetUnit, _mergedCell, cellNum;
+var spreadSheet, mergedCellsSheet, sheetEdge;
+var _cell, _xEdgeCell, _yEdgeCell, _sheetUnit, _mergedCell, cellNum;
 var pastCurPosX, pastCurPosY; 
 var contents = [];
 var isMouseDown = false;
@@ -10,12 +10,16 @@ var init = function(){
 	document.body.style.width = window.innerWidth + 200;
 
 	spreadSheet = document.getElementById('spread_sheet');
+	sheetEdge = document.getElementById('sheet_edge');
 	mergedCellsSheet = document.getElementById('merged_cells_sheet');
 	_cell = {type: 'div', className : 'cell', length : 20};
+	_xEdgeCell = {type: 'div', className : 'x_edge_cell'};
+	_yEdgeCell = {type: 'div', className : 'y_edge_cell'};
 	_sheetUnit = {type : 'div', className : 'sheet_unit', length : 500};
 	_mergedCell = {type: 'div', className :'merged_cell', length : 60};
 	cellNum = ((window.innerHeight+200)/_cell.length)*((window.innerWidth+200)/_cell.length);
 	createSheet(_cell, cellNum);
+	createEdge(_xEdgeCell, _yEdgeCell);
 	createMergedCell(_sheetUnit, cellNum);
 
 	contents.push(document.getElementById('information'));
@@ -38,6 +42,37 @@ var createSheet = function(obj, num){
 		spreadSheet.appendChild(cell);		
 		i++;
 	}	
+};
+
+var createEdge = function(objX, objY){
+	var i = 0;
+	var j = 0;
+	var k = 0;
+	while( i<Math.floor((window.innerWidth+200)/_cell.length)){
+		var xEdgeCell = document.createElement(objX.type);
+		xEdgeCell.className = objX.className;
+		if(i>1){	
+			if(i>=28){
+				xEdgeCell.innerHTML = String.fromCharCode(97+j)+String.fromCharCode(97+k);
+				if( k<25 ){ k++; }else{ j++; k=0; };
+			}else{
+				xEdgeCell.innerHTML = String.fromCharCode(97+i-2);
+			}
+		}
+		sheetEdge.appendChild(xEdgeCell);
+		i++;
+	}
+	i = 0;
+	while( i<Math.floor((window.innerHeight+200)/_cell.length)){
+		var yEdgeCell = document.createElement(objY.type);
+		yEdgeCell.className = objY.className;
+		yEdgeCell.style.top = 20*i;
+		if(i>0){
+			yEdgeCell.innerHTML = i;
+		}
+		sheetEdge.appendChild(yEdgeCell);
+		i++;
+	}
 };
 
 var createMergedCell = function(obj, num){

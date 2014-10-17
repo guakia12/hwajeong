@@ -51,6 +51,8 @@ div#merged_cells_sheet {
 	margin: 0px;
 	padding: 0px;
 	position: absolute;
+	top: 20px;
+	left: 20px;
 	width: inherit;
 	height: inherit;
 }
@@ -72,12 +74,60 @@ div.merged_cell {
  	background-position: center center;
 }
 
+div#spread_sheet {
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	width: inherit;
+	height: inherit;
+}
+
+div.x_edge_cell {
+	box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	position: relative;
+  	top: 0px;
+  	left: 0px;
+  	display: inline-block;
+  	width: 20px;
+  	height: 20px;
+  	overflow: hidden;
+  	background: #EBEBEB;
+  	border-style: solid;
+  	border-width: 0px thin thin 0px;
+  	border-color: rgba(0, 0, 0, 0.1);
+  	font-size: 12px;
+  	font-weight: bold; 
+  	text-align: center;
+  	padding: 2px;
+}
+
+div.y_edge_cell {
+	box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	position: absolute;
+  	left: 0px;
+  	display: block;
+  	width: 40px;
+  	height: 20px;
+  	overflow: hidden;
+  	background: #EBEBEB;
+  	border-style: solid;
+  	border-width: 0px thin thin 0px;
+  	border-color: rgba(0, 0, 0, 0.1);
+  	font-size: 12px;
+  	font-weight: bold; 
+  	padding: 2px;
+}
+
 table {
 	border-collapse: collapse;
 	margin: 0px;
 	position: absolute;
-	top: 20px;
-	left: 20px;
+	top: 60px;
+	left: 60px;
 }
 
 td.visible {
@@ -205,9 +255,7 @@ div#twitter_btn {
   	left: 480px;
 }
 
-a{
-	color: blue;
-}
+a{ color: blue; }
 
 .draggable {
 	box-shadow: 5px 5px 2px black;
