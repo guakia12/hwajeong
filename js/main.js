@@ -133,24 +133,36 @@ var setMoving = function(){
 	var setSpeed = function(){
 		for( i=0 ; i<slowMovingImgs.childNodes.length ; i++ ){
 			var tmp = slowMovingImgs.childNodes[i];
-			var x = (Math.floor(Math.random()*15)*40);
-			var y = (Math.floor(Math.random()*15)*40);
-			tmp.style.left = Math.random() < 0.5 ? tmp.offsetLeft-x : tmp.offsetLeft+x ;
-			tmp.style.top = Math.random() < 0.5 ? tmp.offsetTop-y : tmp.offsetTop+y ;
+			var _x = (Math.floor(Math.random()*20)*40);
+			var _y = (Math.floor(Math.random()*20)*40);
+			var x = Math.random() < 0.5 ? tmp.offsetLeft-_x : tmp.offsetLeft+_x ;
+			if(x<500*(-1)){ x=tmp.offsetLeft+_x; }else if(x>window.innerWidth+500){ x=tmp.offsetLeft-_x;}
+			tmp.style.left = x;
+			var y = Math.random() < 0.5 ? tmp.offsetTop-_y : tmp.offsetTop+_y ;
+			if(y<500*(-1)){ y=tmp.offsetTop+_y; }else if(y>window.innerHeight+500){ y=tmp.offsetTop-_y;}
+			tmp.style.top = y;
 		}
 		for( i=0 ; i<mediumMovingImgs.childNodes.length ; i++ ){
 			var tmp = mediumMovingImgs.childNodes[i];
-			var x = (Math.floor(Math.random()*15)*80);
-			var y = (Math.floor(Math.random()*15)*80);
-			tmp.style.left = Math.random() < 0.5 ? tmp.offsetLeft-x : tmp.offsetLeft+x ;
-			tmp.style.top = Math.random() < 0.5 ? tmp.offsetTop-y : tmp.offsetTop+y ;
+			var _x = (Math.floor(Math.random()*15)*80);
+			var _y = (Math.floor(Math.random()*15)*80);
+			var x = Math.random() < 0.5 ? tmp.offsetLeft-_x : tmp.offsetLeft+_x ;
+			if(x<500*(-1)){ x=tmp.offsetLeft+_x; }else if(x>window.innerWidth+500){ x=tmp.offsetLeft-_x;}
+			tmp.style.left = x;
+			var y = Math.random() < 0.5 ? tmp.offsetTop-_y : tmp.offsetTop+_y ;
+			if(y<500*(-1)){ y=tmp.offsetTop+_y; }else if(y>window.innerHeight+500){ y=tmp.offsetTop-_y;}
+			tmp.style.top = y;
 		}
 		for( i=0 ; i<fastMovingImgs.childNodes.length ; i++ ){
 			var tmp = fastMovingImgs.childNodes[i];
-			var x = (Math.floor(Math.random()*10)*120);
-			var y = (Math.floor(Math.random()*10)*120);
-			tmp.style.left = Math.random() < 0.5 ? tmp.offsetLeft-x : tmp.offsetLeft+x ;
-			tmp.style.top = Math.random() < 0.5 ? tmp.offsetTop-y : tmp.offsetTop+y ;
+			var _x = (Math.floor(Math.random()*10)*120);
+			var _y = (Math.floor(Math.random()*10)*120);
+			var x = Math.random() < 0.5 ? tmp.offsetLeft-_x : tmp.offsetLeft+_x ;
+			if(x<500*(-1)){ x=tmp.offsetLeft+_x; }else if(x>window.innerWidth+500){ x=tmp.offsetLeft-_x;}
+			tmp.style.left = x;
+			var y = Math.random() < 0.5 ? tmp.offsetTop-_y : tmp.offsetTop+_y ;
+			if(y<500*(-1)){ y=tmp.offsetTop+_y; }else if(y>window.innerHeight+500){ y=tmp.offsetTop-_y;}
+			tmp.style.top = y;
 		}	
 	};
 	setSpeed();
