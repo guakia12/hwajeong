@@ -167,10 +167,6 @@ var setMouseEvent = function(arr){
 	arr.push(document.getElementById('homepage'));
 	arr.push(document.getElementById('introduction'));
 	arr.push(document.getElementById('countdown'));
-	arr.push(document.getElementById('facebook_btn'));
-	arr.push(document.getElementById('instagram_btn'));
-	arr.push(document.getElementById('medium_btn'));
-	arr.push(document.getElementById('twitter_btn'));
 	for(var i=0 ; i<arr.length ; i++){
 		arr[i].onmousedown = function(e){ isMouseDown = true; pick(e, this); };
 	}
