@@ -163,67 +163,12 @@ div.y_edge_cell {
   	z-index: 1;
 }
 
-div#information1 {
-	margin: 0px;
-	padding: 0px;
-	width: 420px;
-	height: 60px;
-	position: absolute;
-	top: 400px;
-	left: 180px;
-	background-image: url('../source/pngs/information_1.png');	
-}
-
-div#information2 {
-	margin: 0px;
-	padding: 0px;
-	width: 320px;
-	height: 60px;
-	position: absolute;
-	top: 500px;
-	left: 300px;
-	background-image: url('../source/pngs/information_2.png');	
-}
-
-div#information3 {
-	margin: 0px;
-	padding: 0px;
-	width: 680px;
-	height: 60px;
-	position: absolute;
-	top: 200px;
-	left: 740px;
-	background-image: url('../source/pngs/information_3.png');	
-}
-
-div#information4 {
-	margin: 0px;
-	padding: 0px;
-	width: 300px;
-	height: 60px;
-	position: absolute;
-	top: 60px;
-	left: 600px;
-	background-image: url('../source/pngs/information_4.png');	
-}
-
-div#information5 {
-	margin: 0px;
-	padding: 0px;
-	width: 380px;
-	height: 280px;
-	position: absolute;
-	top: 60px;
-	left: 80px;
-	background-image: url('../source/pngs/information_5.png');	
-}
-
 table {
 	border-collapse: collapse;
 	margin: 0px;
 	position: absolute;
-	top: 60px;
-	left: 80px;
+	top: 460px;
+	left: 1060px;
 }
 
 td.visible {
@@ -231,7 +176,7 @@ td.visible {
   	padding: 2px 0 0 2px;
   	font-size: 12px;
 	border: 1px black solid;
-	box-shadow: 5px 5px 2px black;
+	box-shadow: 5px 5px 2px rgba(0,0,0,0.5);
 	cursor: url('http://grabanddrag.mozdev.org/grab.png'), auto;	
 }
 
@@ -256,13 +201,29 @@ div#countdown {
   	border: 1px black solid;
   	position: absolute;
   	font-size: 12px;
-  	top: 220px;
-  	left: 500px;
+  	top: 160px;
+  	left: 920px;
   	padding: 2px;
 }
 
-div#introduction {
-	height: 180px;
+div#category {
+	height: 40px;
+	width: 500px;
+	padding: 2px;
+	background-color: white;
+	box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	border: 1px black solid;
+  	position: absolute;
+  	top: 60px;
+  	left: 120px;
+  	font-size: 16px;
+  	font-weight: bold;
+}
+
+div#title {
+	height: 40px;
 	width: 300px;
 	padding: 2px;
 	background-color: white;
@@ -271,8 +232,71 @@ div#introduction {
   	-webkit-box-sizing: border-box;
   	border: 1px black solid;
   	position: absolute;
-  	top: 500px;
-  	left: 800px;
+  	top: 140px;
+  	left: 180px;
+  	font-size: 16px;
+  	font-weight: bold;
+}
+
+div#date {
+	height: 40px;
+	width: 200px;
+	padding: 2px;
+	background-color: white;
+	box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	border: 1px black solid;
+  	position: absolute;
+  	top: 160px;
+  	left: 700px;
+  	font-size: 16px;
+  	font-weight: bold;
+}
+
+div#location {
+	height: 40px;
+	width: 340px;
+	padding: 2px;
+	background-color: white;
+	box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	border: 1px black solid;
+  	position: absolute;
+  	top: 220px;
+  	left: 740px;
+  	font-size: 16px;
+  	font-weight: bold;
+}
+
+div#homepage {
+	height: 20px;
+	width: 180px;
+	padding: 2px;
+	background-color: white;
+	box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	border: 1px black solid;
+  	position: absolute;
+  	top: 460px;
+  	left: 160px;
+  	font-size: 12px;
+}
+
+div#introduction {
+	height: 240px;
+	width: 300px;
+	padding: 2px;
+	background-color: white;
+	box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	border: 1px black solid;
+  	position: absolute;
+  	top: 200px;
+  	left: 160px;
   	font-size: 12px;
 }
 
@@ -287,8 +311,8 @@ div#facebook_btn {
   	border: 1px black solid;
   	font-size: 12px;
   	position: absolute;
-  	top: 540px;
-  	left: 60px;
+  	top: 560px;
+  	left: 160px;
 }
 
 div#instagram_btn {
@@ -302,8 +326,8 @@ div#instagram_btn {
   	border: 1px black solid;
   	font-size: 12px;
   	position: absolute;
-  	top: 580px;
-  	left: 60px;
+  	top: 600px;
+  	left: 160px;
 }
 
 div#medium_btn {
@@ -317,8 +341,8 @@ div#medium_btn {
   	border: 1px black solid;
   	font-size: 12px;
   	position: absolute;
-  	top: 620px;
-  	left: 60px;
+  	top: 640px;
+  	left: 180px;
 }
 
 div#twitter_btn {
@@ -332,8 +356,22 @@ div#twitter_btn {
   	border: 1px black solid;
   	font-size: 12px;
   	position: absolute;
-  	top: 660px;
-  	left: 60px;
+  	top: 680px;
+  	left: 160px;
+}
+
+div.position {
+	height: 15px;
+	width: 40px;
+	padding: 2px;
+	background-color: #F9EEA0;
+	font-size: 11px;
+	color: red;
+	margin-top: -20px;
+	position: absolute;
+	top: 0px;
+	left: 0px; 
+	z-index: 0;
 }
 
 a{ color: blue; }
@@ -347,7 +385,7 @@ a{ color: blue; }
 }
 
 .draggable {
-	box-shadow: 5px 5px 2px black;
+	box-shadow: 5px 5px 2px rgba(0,0,0,0.5);
 	cursor: url('http://grabanddrag.mozdev.org/grab.png'), auto;
 }
 

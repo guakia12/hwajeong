@@ -4,28 +4,30 @@ var xCellNum, yCellNum, totaltotalCellNum;
 var pastCurPosX, pastCurPosY; 
 var contents = [];
 var isMouseDown = false;
-var target;
+var positionBox, target;
 
 var init = function(){
-	document.body.style.height = window.innerHeight + 200;
-	document.body.style.width = window.innerWidth + 200;
-	setMoving();
-
+	document.body.style.height = window.innerHeight + 500;
+	document.body.style.width = window.innerWidth + 500;
+	
 	_cell = {type: 'div', className : 'cell', length : 20};
 	_xEdgeCell = {type: 'div', className : 'x_edge_cell'};
 	_yEdgeCell = {type: 'div', className : 'y_edge_cell'};
 	_sheetUnit = {type : 'div', className : 'sheet_unit', length : 500};
 	_mergedCell = {type: 'div', className :'merged_cell', length : 60};
 
-	xCellNum = Math.floor((window.innerWidth+200)/_cell.length);
-	yCellNum = Math.floor((window.innerHeight+200)/_cell.length);
+	xCellNum = Math.floor((window.innerWidth+500)/_cell.length);
+	yCellNum = Math.floor((window.innerHeight+500)/_cell.length);
 	totalCellNum = (xCellNum*yCellNum);
 	createSheet(_cell, totalCellNum);
 	createEdge(_xEdgeCell, _yEdgeCell);
+	setMoving();
 	createMergedCell(_sheetUnit, totalCellNum);
 
 	countDownTimer('10/31/2014 09:00 AM', 'countdown');
 	setMouseEvent(contents);
+	positionBox = document.createElement('div');
+	positionBox.className = 'position';
 	window.onmousemove = checkRefresh;
 	window.onmouseup = function(){ put(); isMouseDown = false; window.onmousemove = checkRefresh; };
 };
@@ -131,15 +133,15 @@ var setMoving = function(){
 	var setSpeed = function(){
 		for( i=0 ; i<slowMovingImgs.childNodes.length ; i++ ){
 			var tmp = slowMovingImgs.childNodes[i];
-			var x = (Math.floor(Math.random()*13)*40);
-			var y = (Math.floor(Math.random()*13)*40);
+			var x = (Math.floor(Math.random()*15)*40);
+			var y = (Math.floor(Math.random()*15)*40);
 			tmp.style.left = Math.random() < 0.5 ? tmp.offsetLeft-x : tmp.offsetLeft+x ;
 			tmp.style.top = Math.random() < 0.5 ? tmp.offsetTop-y : tmp.offsetTop+y ;
 		}
 		for( i=0 ; i<mediumMovingImgs.childNodes.length ; i++ ){
 			var tmp = mediumMovingImgs.childNodes[i];
-			var x = (Math.floor(Math.random()*13)*80);
-			var y = (Math.floor(Math.random()*13)*80);
+			var x = (Math.floor(Math.random()*15)*80);
+			var y = (Math.floor(Math.random()*15)*80);
 			tmp.style.left = Math.random() < 0.5 ? tmp.offsetLeft-x : tmp.offsetLeft+x ;
 			tmp.style.top = Math.random() < 0.5 ? tmp.offsetTop-y : tmp.offsetTop+y ;
 		}
@@ -152,13 +154,23 @@ var setMoving = function(){
 		}	
 	};
 	setSpeed();
+	setTimeout(setSpeed, 1000);
 	setInterval(setSpeed, 5000);
 };
 
 var setMouseEvent = function(arr){
-	arr.push(document.getElementById('information1'));
-	arr.push(document.getElementById('countdown'));
+	arr.push(document.getElementById('information'));
+	arr.push(document.getElementById('category'));
+	arr.push(document.getElementById('title'));
+	arr.push(document.getElementById('date'));
+	arr.push(document.getElementById('location'));
+	arr.push(document.getElementById('homepage'));
 	arr.push(document.getElementById('introduction'));
+	arr.push(document.getElementById('countdown'));
+	arr.push(document.getElementById('facebook_btn'));
+	arr.push(document.getElementById('instagram_btn'));
+	arr.push(document.getElementById('medium_btn'));
+	arr.push(document.getElementById('twitter_btn'));
 	for(var i=0 ; i<arr.length ; i++){
 		arr[i].onmousedown = function(e){ isMouseDown = true; pick(e, this); };
 	}
@@ -168,17 +180,24 @@ var pick = function(e, obj){
 	target = obj;
 	target.style.left = e.pageX-20;
 	target.style.top = e.pageY-20;
+	target.appendChild(positionBox);
 	window.onmousemove = drag;
 };
 
 var drag = function(e){
 	target.style.left = e.pageX-20;
 	target.style.top = e.pageY-20;
+	showPositionVal(e);
+};
+
+var showPositionVal = function(e){
+	positionBox.innerHTML = '('+Math.floor(target.offsetLeft/_cell.length)+','+Math.floor(target.offsetTop/_cell.length)+')';
 };
 
 var put = function(){
 	target.style.left = _cell.length * Math.round(target.offsetLeft/_cell.length);
 	target.style.top = _cell.length * Math.round(target.offsetTop/_cell.length);
+	target.removeChild(target.lastChild);
 };
 
 window.onload = function(){	init();};
